@@ -1,5 +1,5 @@
 +++
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "tdt/testing"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 2  # Order that this section will appear.
@@ -14,82 +14,3 @@ weight = 2  # Order that this section will appear.
 
 +++
 
-## Teste
-
-#### Husi teste hamutuk 1120:
-* Positivu 24 (kazu konfirmadu)
-* Negativu 822 
-* Hein rezultadu 274 
-
-<script type="text/javascript">
-  google.charts.load('current', {'packages':['sankey']});
-  google.charts.setOnLoadCallback(drawSankey);
-
-  function drawSankey() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'From');
-    data.addColumn('string', 'To');
-    data.addColumn('number', '');
-    data.addRows([
-      [ 'Teste', 'Negativu', 822 ],
-      [ 'Teste', 'Positivu', 24 ],
-      [ 'Teste', 'Hein rezultadu', 274 ],
-    ]);
-
-    var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
-                  '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
-
-    var options = {
-      chartArea: {width: '50%'},
-      sankey: {
-        node: {
-          colors: colors
-        },
-        link: {
-          colorMode: 'gradient',
-          colors: colors
-        }
-      }
-
-    };
-
-    // Instantiates and draws our chart, passing in some options.
-    var chart = new google.visualization.Sankey(document.getElementById('test-sankey'));
-    chart.draw(data, options);
-  }
-</script>
-<div id="test-sankey"></div>
-
-##### Timor-Leste halo teste por 1,000 barak liu fali Indonesia, maibé menus se kompara ho Filipina no Vietnam.
-<script>
-google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBarColors);
-
-function drawBarColors() {
-      var data = google.visualization.arrayToDataTable([
-        ['Nasaun', 'Teste por 1,000', { role: "style" } ],
-        ['Timor-Leste', 0.70, 'green'],
-        ['Indonesia', 0.35, ''],
-        ['Philippines', 1.25, ''],
-        ['Vietnam', 2.68, ''],
-        ['Australia', 20.34, ''],
-      ]);
-
-      var options = {
-        title: 'Teste por 1,000',
-        colors: ['green'],
-        legend: { position: "none" },
-      };
-      var chart = new google.visualization.BarChart(document.getElementById('testing-div'));
-      chart.draw(data, options);
-    }
-</script>
-<div id="testing-div"></div>
-
-<style>
-#test-sankey, #testing-div {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-</style>

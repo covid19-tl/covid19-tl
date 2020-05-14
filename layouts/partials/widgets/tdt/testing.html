@@ -1,0 +1,82 @@
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 id="teste">Teste</h2>
+        <h4 id="husi-teste-hamutuk-1120">Husi teste hamutuk 1120:</h4>
+        <ul>
+            <li>Positivu 24 (kazu konfirmadu)</li>
+            <li>Negativu 822</li>
+            <li>Hein rezultadu 274</li>
+        </ul>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['sankey']});
+            google.charts.setOnLoadCallback(drawSankey);
+
+            function drawSankey() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'From');
+                data.addColumn('string', 'To');
+                data.addColumn('number', '');
+                data.addRows([
+                    [ 'Teste', 'Negativu', 822 ],
+                    [ 'Teste', 'Positivu', 24 ],
+                    [ 'Teste', 'Hein rezultadu', 274 ],
+                ]);
+
+                var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
+                    '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+
+                var options = {
+                    chartArea: {width: '50%'},
+                    sankey: {
+                        node: {
+                            colors: colors
+                        },
+                        link: {
+                            colorMode: 'gradient',
+                            colors: colors
+                        }
+                    }
+
+                };
+
+                // Instantiates and draws our chart, passing in some options.
+                var chart = new google.visualization.Sankey(document.getElementById('test-sankey'));
+                chart.draw(data, options);
+            }
+        </script>
+        <div id="test-sankey"></div>
+        <h5 id="timor-leste-halo-teste-por-1000-barak-liu-fali-indonesia-maibé-menus-se-kompara-ho-filipina-no-vietnam">Timor-Leste halo teste por 1,000 barak liu fali Indonesia, maibé menus se kompara ho Filipina no Vietnam.</h5>
+        <script>
+            google.charts.load('current', {packages: ['corechart', 'bar']});
+            google.charts.setOnLoadCallback(drawBarColors);
+
+            function drawBarColors() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Nasaun', 'Teste por 1,000', { role: "style" } ],
+                    ['Timor-Leste', 0.70, 'green'],
+                    ['Indonesia', 0.35, ''],
+                    ['Philippines', 1.25, ''],
+                    ['Vietnam', 2.68, ''],
+                    ['Australia', 20.34, ''],
+                ]);
+
+                var options = {
+                    title: 'Teste por 1,000',
+                    colors: ['green'],
+                    legend: { position: "none" },
+                };
+                var chart = new google.visualization.BarChart(document.getElementById('testing-div'));
+                chart.draw(data, options);
+            }
+        </script>
+        <div id="testing-div"></div>
+        <style>
+            #test-sankey, #testing-div {
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </div>
+</div>
