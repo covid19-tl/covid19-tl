@@ -2,11 +2,11 @@
 <div class="row">
     <div class="col-lg-12">
         <h2 id="teste">Teste</h2>
-        <h4 id="husi-teste-hamutuk-1120">Husi teste hamutuk 1120:</h4>
+        <h4 id="husi-teste-hamutuk-1120">Husi teste hamutuk {{ site.Params.tests_total }}:</h4>
         <ul>
-            <li>Positivu 24 (kazu konfirmadu)</li>
-            <li>Negativu 822</li>
-            <li>Hein rezultadu 274</li>
+            <li>Positivu {{ site.Params.positive_tests }} (kazu konfirmadu)</li>
+            <li>Negativu {{ site.Params.negative_tests }}</li>
+            <li>Hein rezultadu {{ site.Params.pending_tests }}</li>
         </ul>
         <script type="text/javascript">
             google.charts.load('current', {'packages':['sankey']});
@@ -18,9 +18,9 @@
                 data.addColumn('string', 'To');
                 data.addColumn('number', '');
                 data.addRows([
-                    [ 'Teste', 'Negativu', 822 ],
-                    [ 'Teste', 'Positivu', 24 ],
-                    [ 'Teste', 'Hein rezultadu', 274 ],
+                    [ 'Teste', 'Negativu', {{ site.Params.negative_tests }} ],
+                    [ 'Teste', 'Positivu', {{ site.Params.positive_tests }} ],
+                    [ 'Teste', 'Hein rezultadu', {{ site.Params.pending_tests }} ],
                 ]);
 
                 var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',

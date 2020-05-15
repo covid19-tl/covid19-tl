@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-lg-12">
         <h2 id="testing">Testing</h2>
-        <h4 id="from-the-1120-tests-conducted">From the 1120 tests conducted:</h4>
+        <h4 id="from-the-1120-tests-conducted">From the {{ site.Params.tests_total }} tests conducted:</h4>
         <ul>
-            <li>24 came back positive</li>
-            <li>822 came back negative</li>
-            <li>274 are pending</li>
+            <li>{{ site.Params.positive_tests }} came back positive</li>
+            <li>{{ site.Params.negative_tests }} came back negative</li>
+            <li>{{ site.Params.pending_tests }} are pending</li>
         </ul>
         <script type="text/javascript">
             google.charts.load('current', {'packages':['sankey']});
@@ -17,9 +17,9 @@
                 data.addColumn('string', 'To');
                 data.addColumn('number', '');
                 data.addRows([
-                    [ 'Tests', 'Negative', 822 ],
-                    [ 'Tests', 'Positive', 24 ],
-                    [ 'Tests', 'Pending', 274 ],
+                    [ 'Tests', 'Negative', {{ site.Params.negative_tests }} ],
+                    [ 'Tests', 'Positive', {{ site.Params.positive_tests }} ],
+                    [ 'Tests', 'Pending', {{ site.Params.pending_tests }} ],
                 ]);
 
                 var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
