@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="col-lg-12">
         <h2 id="teste">Teste</h2>
@@ -9,43 +8,30 @@
             <li>Hein rezultadu {{ site.Params.pending_tests }}</li>
         </ul>
         <script type="text/javascript">
-            google.charts.load('current', {'packages':['sankey']});
-            google.charts.setOnLoadCallback(drawSankey);
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
 
-            function drawSankey() {
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'From');
-                data.addColumn('string', 'To');
-                data.addColumn('number', '');
-                data.addRows([
-                    [ 'Teste', 'Negativu', {{ site.Params.negative_tests }} ],
-                    [ 'Teste', 'Positivu', {{ site.Params.positive_tests }} ],
-                    [ 'Teste', 'Hein rezultadu', {{ site.Params.pending_tests }} ],
-                ]);
+          function drawChart() {
 
-                var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
-                    '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+            var data = google.visualization.arrayToDataTable([
+              ['Teste', 'Per Day'],
+              ['Negativu', {{ site.Params.negative_tests }} ],
+              ['Positivu', {{ site.Params.positive_tests }} ],
+              ['Hein rezultadu', {{ site.Params.pending_tests }} ],
+            ]);
 
-                var options = {
-                    chartArea: {width: '50%'},
-                    sankey: {
-                        node: {
-                            colors: colors
-                        },
-                        link: {
-                            colorMode: 'gradient',
-                            colors: colors
-                        }
-                    }
+            var options = {
+              title: 'Teste'
+            };
 
-                };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-                // Instantiates and draws our chart, passing in some options.
-                var chart = new google.visualization.Sankey(document.getElementById('test-sankey'));
-                chart.draw(data, options);
-            }
+            chart.draw(data, options);
+          }
+
         </script>
-        <div id="test-sankey"></div>
+        <div id="piechart" style="width: 800px; height: 400px;"></div>
+
         <h5 id="timor-leste-halo-teste-por-1000-barak-liu-fali-indonesia-maibé-menus-se-kompara-ho-filipina-no-vietnam">Timor-Leste halo teste por 1,000 barak liu fali Indonesia, maibé menus se kompara ho Filipina no Vietnam.</h5>
         <script>
             google.charts.load('current', {packages: ['corechart', 'bar']});
