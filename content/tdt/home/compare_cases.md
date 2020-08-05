@@ -39,7 +39,7 @@ weight = 4  # Order that this section will appear.
         ['Baucau', 0],
         ['Bobonaro', 0],
         ['Cova', 0],
-        ['Dili', 22],
+        ['Dili', 23],
         ['Ermera', 0],
         ['Lautem', 0],
         ['Liquiça', 2],
