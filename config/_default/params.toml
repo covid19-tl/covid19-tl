@@ -1,8 +1,8 @@
 # SITE SETUP
 # Documentation: https://sourcethemes.com/academic/
 
-last_update_en = "08 August 2020"
-last_update_tdt = "08 Agusto 2020"
+last_update_en = "09 August 2020"
+last_update_tdt = "09 Agusto 2020"
 confirmed_cases = 25
 recovered_cases = 28
 case_data = [
